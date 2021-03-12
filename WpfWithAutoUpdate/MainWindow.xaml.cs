@@ -34,30 +34,34 @@ namespace WpfWithAutoUpdate
         {
             Data.CreateTable();
             listViewData.ItemsSource = Data.GetAllData();
-            update =await UpdateManager.GitHubUpdateManager(@"https://github.com/dyako-baram/WpfWithAutoUpdate");
+            update = await UpdateManager.GitHubUpdateManager(@"https://github.com/dyako-baram/WpfWithAutoUpdate");
 
 
-        }
-        public async void CheckForUpdate()
-        {
-            var updateInfo = await update.CheckForUpdate();
-
-            if (updateInfo.ReleasesToApply.Count > 0)
-            {
-                var dialog = MessageBox.Show("do you want update to newer version?", "Update?", MessageBoxButton.YesNo);
-                if(dialog == MessageBoxResult.Yes)
-                {
-                    await update.UpdateApp();
-                    MessageBox.Show("Updated succesfuly!\n Please Restart to apply the changes");
-                }
-            }
-            
         }
         private void buttonAddToListView_Click(object sender, RoutedEventArgs e)
         {
             Data.SaveData(textName.Text);
             listViewData.ItemsSource = Data.GetAllData();
+        }
 
+        private async void CheckUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            var updateInfo = await update.CheckForUpdate();
+
+            if (updateInfo.ReleasesToApply.Count > 0)
+            {
+                CheckUpdate.IsEnabled = true;
+            }
+            else
+            {
+                CheckUpdate.IsEnabled = false;
+            }
+        }
+
+        private async void Update_Click(object sender, RoutedEventArgs e)
+        {
+            
+            await update.UpdateApp();
         }
     }
 }

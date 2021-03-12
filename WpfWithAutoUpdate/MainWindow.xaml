@@ -16,6 +16,8 @@
             <TextBlock Margin="0 0 0 10">Insert name to list view</TextBlock>
             <TextBox Padding="4" x:Name="textName"/>
             <Button Padding="5" Background="White" Margin="0 5" Content="Add To List View" x:Name="buttonAddToListView" Click="buttonAddToListView_Click"/>
+            <Button Padding="5" Background="Azure" Margin="0 5" Content="Check for Update" x:Name="CheckUpdate" Click="CheckUpdate_Click"/>
+            <Button Padding="5" Background="LightGreen" Margin="0 5" Content="Update" x:Name="Update" Click="Update_Click"/>
         </StackPanel>
         <ListView Grid.Column="1" x:Name="listViewData" />
     </Grid>
