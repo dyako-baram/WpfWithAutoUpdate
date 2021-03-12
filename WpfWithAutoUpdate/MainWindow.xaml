@@ -14,9 +14,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Margin="10">
             <TextBlock Margin="0 0 0 10">Insert name to list view</TextBlock>
-            <TextBox x:Name="textName"/>
-            <Button Content="Add To List View" x:Name="buttonAddToListView" Click="buttonAddToListView_Click"/>
-            <Button Content="update" x:Name="buttonUpdate" Click="buttonUpdate_Click"/>
+            <TextBox Padding="4" x:Name="textName"/>
+            <Button Padding="5" Background="White" Margin="0 5" Content="Add To List View" x:Name="buttonAddToListView" Click="buttonAddToListView_Click"/>
         </StackPanel>
         <ListView Grid.Column="1" x:Name="listViewData" />
     </Grid>
