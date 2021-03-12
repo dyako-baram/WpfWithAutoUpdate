@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfWithAutoUpdate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfWithAutoUpdate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        x:Name="mainWindow" Loaded="mainWindow_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Margin="0 0 0 10">Insert name to list view</TextBlock>
+            <TextBox x:Name="textName"/>
+            <Button Content="Add To List View" x:Name="buttonAddToListView" Click="buttonAddToListView_Click"/>
+            <Button Content="update" x:Name="buttonUpdate" Click="buttonUpdate_Click"/>
+        </StackPanel>
+        <ListView Grid.Column="1" x:Name="listViewData" />
+    </Grid>
+</Window>
